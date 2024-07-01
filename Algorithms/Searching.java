@@ -20,6 +20,7 @@ public class Searching {
             int mid = (int)((upper + lower)/2);
 //            System.out.println(mid);
             if (a[mid] == val){
+
                 System.out.println("Found at index " + mid);
                 return;
             }
