@@ -1,0 +1,59 @@
+
+Access Modifiers:-
+Public --> Accessible everywhere
+Private --> In same class of the package only
+Default --> In same package only
+
+Getters and Setters:- (Functions of a class)
+To access the private objects
+
+"This" Keyword:
+public void setRoll(int roll){
+    this.roll = roll;
+}
+----Here 'roll' was parameter for the class and is used as an argument in the 'setRoll' function as well,
+so to specify... "this" keyword is used with the 'roll' parameter to separate it from the argument.----
+
+
+Constructor:
+A function defined in the class so that we don't need to pass the parameters in the class separately but in the same line it is called.
+Name of this function = name of the class.
+Default constructor is basically empty constructor.
+if we make the object without parameters, and only a non-default constructor is defined... Error will be thrown
+
+Destructor:
+Opposite of Constructor. It deletes the objects which are not in use.
+In Java we don't need to create destructor as java has by default garbage collector.
+
+"Final" Keyword:
+To make Immutable attributes or parameters in a class.
+we need to assign the value to this attribute during its declaration and cannot change it afterwards.
+
+"static" Keyword:
+Converts object dependent variable to class dependent variable.
+To use non-static variables, we need to make objects...but for static variables, no objects are required.
+
+# 4 Pillars of OOPS:
+1. Abstraction
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+# POLYMORPHISM:
+Poly means 'Many' and Morphism means 'Forms'. Many ways or forms of doing something in Java.
+Types of Polymorphism-
+1. Function Overloading (Compile time polymorphism)- different functions are created but has same name.
+Either parameter type or return type or number of arguments must be different for all these functions.
+2. Function Overriding (Runtime polymorphism)
+
+# INHERITANCE:
+Child class inherits all the methods of the base class.
+we don't need to define the methods in the child class which are already defined in the base class.
+
+# ABSTRACTION:
+Abstract means "existing only as an idea, not as a physical thing."
+"abstract" keyword is used.
+For pure abstraction we use interfaces defined using interface keyword.
+we cannot make constructor for interfaces.
+
+
