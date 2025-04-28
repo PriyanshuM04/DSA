@@ -81,9 +81,9 @@ public class Sorting {
         System.out.print("Original Array: ");
         print(a);
 
-//        bubbleSort(a);
+        bubbleSort(a);
 //        selectionSort(a);
-        insertionSort(a);
+//        insertionSort(a);
 //        mergeSort(a);
 //        quickSort(a);
     }

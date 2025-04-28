@@ -16,7 +16,7 @@ public class Linked_List {
         Node next;
         Node(String data){
             this.data = data;
-            this .next = null;
+            this.next = null;
             size++;
         }
     }
