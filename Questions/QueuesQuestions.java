@@ -3,6 +3,7 @@ package Questions;
 import java.util.Stack;
 
 public class QueuesQuestions {
+    // Implement Queue using 2 Stacks
     static class QueueY {
         static Stack<Integer> s1 = new Stack<>();
         static Stack<Integer> s2 = new Stack<>();
