@@ -150,6 +150,7 @@ public class Queues {
         q3.add(2);
         q3.add(3);
         q3.add(4);
+
         while (!q3.isEmpty()) System.out.print(q3.remove() + " ");
     }
 }
