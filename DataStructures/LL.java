@@ -4,7 +4,7 @@ import java.util.*;
 
 class LL {
     public static void main(String[] args) {
-        LinkedList<String> list = new LinkedList<String>();
+        LinkedList<String> list = new LinkedList<>();
         list.addFirst("This");
         list.addLast("is");
         list.addLast("a");
@@ -14,8 +14,8 @@ class LL {
 
         System.out.println(list.size());
 
-        for(int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + "->");
+        for (String s : list) {
+            System.out.print(s + "->");
         }
         System.out.println("null");
 
