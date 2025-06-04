@@ -1,7 +1,5 @@
 package DataStructures;
 
-import java.util.ArrayList;
-
 public class BinarySearchTrees {
     static class Node {
         int data;
@@ -17,7 +15,6 @@ public class BinarySearchTrees {
         inOrder(root.left);
         System.out.print(root.data + " ");
         inOrder(root.right);
-        return;
     }
 
     public static Node insert(Node root, int val) {
@@ -89,7 +86,7 @@ public class BinarySearchTrees {
         inOrder(root);
         System.out.println();
 
-//        System.out.println(search(root, 11));
+        System.out.println(search(root, 11));
         delete(root, 5);
         inOrder(root);
         System.out.println();

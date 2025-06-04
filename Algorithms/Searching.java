@@ -17,7 +17,7 @@ public class Searching {
         int upper = size;
 
         while (lower<=upper){
-            int mid = (int)((upper + lower)/2);
+            int mid = lower + (upper-lower)/2;
 //            System.out.println(mid);
             if (a[mid] == val){
 
