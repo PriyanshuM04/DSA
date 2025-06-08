@@ -94,9 +94,29 @@ public class Sorting {
     }
 
     // ----Quick Sort----
-    static void quickSort(int[] a) {
-        System.out.print("Quick Sort: ");
-        print(a);
+    static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int j = low-1;
+
+        for (int i=low; i<high; i++) {
+            if (arr[i] <= pivot) {
+                j++;
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        int temp = arr[j+1];
+        arr[j+1] = arr[high];
+        arr[high] = temp;
+        return j+1;
+    }
+    static void quickSort(int[] a, int low, int high) {
+        if (low < high) {
+            int idx = partition(a, low, high);
+            quickSort(a, low, idx - 1);
+            quickSort(a, idx + 1, high);
+        }
     }
 
 
@@ -115,7 +135,9 @@ public class Sorting {
 //        int[] res = mergeSort(a, 0, a.length-1);
 //        System.out.print("Merge Sort: ");
 //        print(res);
-//
-//        quickSort(a);
+
+        quickSort(a, 0, a.length-1);
+        System.out.print("Quick Sort: ");
+        print(a);
     }
 }
