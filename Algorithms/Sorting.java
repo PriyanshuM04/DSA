@@ -9,7 +9,7 @@ public class Sorting {
         System.out.println();
     }
 
-    //----BUBBLE SORT----
+    //----Bubble Sort----
     static void bubbleSort(int[] a) {       // O(n^2)
         int size = a.length;
         for (int j=0; j<size-1; j++) {
@@ -61,11 +61,36 @@ public class Sorting {
     }
 
     // ----Merge Sort----
-    static void mergeSort(int[] a) {
+    static int[] merge(int[] left, int[] right) {
+        int l = left.length;
+        int r = right.length;
+        int[] result = new int[l + r];
+        int idx = 0;
+        int i=0, j=0;
+        while (i<l && j<r) {
+            if (left[i] <= right[j]) {
+                // add left[i] to result
+                result[idx++] = left[i++];
+            }
+            else if (left[i] > right[j]) {
+                // add right[j] to result
+                result[idx++] = right[j++];
+            }
+        }
+        while (i<l) result[idx++] = left[i++];
+        while (j<r) result[idx++] = right[j++];
 
+        return result;
+    }
+    static int[] mergeSort(int[] a, int low, int high) {
+        if (low==high) return new int[]{a[low]};
 
-        System.out.print("Merge Sort: ");
-        print(a);
+        int mid = low + (high-low)/2;
+
+        int[] left = mergeSort(a, low, mid);
+        int[] right = mergeSort(a, mid+1, high);
+        int[] merged = merge(left, right);
+        return merged;
     }
 
     // ----Quick Sort----
@@ -81,10 +106,16 @@ public class Sorting {
         System.out.print("Original Array: ");
         print(a);
 
-        bubbleSort(a);
+//        bubbleSort(a);
+
 //        selectionSort(a);
+//
 //        insertionSort(a);
-//        mergeSort(a);
+//
+//        int[] res = mergeSort(a, 0, a.length-1);
+//        System.out.print("Merge Sort: ");
+//        print(res);
+//
 //        quickSort(a);
     }
 }
