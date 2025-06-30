@@ -1,6 +1,8 @@
 package DataStructures;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Graph {
     static class  Pair {
@@ -61,6 +63,30 @@ public class Graph {
         return adj;
     }
 
+    static ArrayList<Integer> bfs(int v, ArrayList<ArrayList<Integer>> adj) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int n = adj.size();
+        boolean[] visited = new boolean[n];
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(v);
+        visited[v] = true;
+
+        while (!q.isEmpty()) {
+            Integer node = q.poll();
+            result.add(node);
+
+            for (int neighbour: adj.get(node)) {
+                if (!visited[neighbour]) {
+                    visited[neighbour] = true;
+                    q.add(neighbour);
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         int n = 5, m = 4;
         Pair[] edges = new Pair[m];
@@ -73,6 +99,9 @@ public class Graph {
 //        printMat(mat);
 
         ArrayList<ArrayList<Integer>> graph = listGraph(n, m, edges);
-        printAdjList(graph);
+//        printAdjList(graph);
+
+        ArrayList<Integer> bfsList = bfs(4, graph);
+        System.out.println(bfsList);
     }
 }
