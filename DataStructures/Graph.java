@@ -87,6 +87,25 @@ public class Graph {
         return result;
     }
 
+    static void dfsOfGraph(int node, boolean[] visited, ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> ls) {
+        visited[node] = true;
+        ls.add(node);
+
+        for (int curr : adj.get(node)) {
+            if (!visited[curr]) {
+                dfsOfGraph(curr, visited, adj, ls);
+            }
+        }
+    }
+
+    static ArrayList<Integer> dfs(int v, ArrayList<ArrayList<Integer>> adj) {
+        int n = adj.size();
+        boolean[] vis = new boolean[n];
+        ArrayList<Integer> result = new ArrayList<>();
+        dfsOfGraph(v, vis, adj, result);
+        return result;
+    }
+
     public static void main(String[] args) {
         int n = 5, m = 4;
         Pair[] edges = new Pair[m];
@@ -102,6 +121,9 @@ public class Graph {
 //        printAdjList(graph);
 
         ArrayList<Integer> bfsList = bfs(4, graph);
-        System.out.println(bfsList);
+//        System.out.println(bfsList);
+
+        ArrayList<Integer> dfsList = dfs(1, graph);
+        System.out.println(dfsList);
     }
 }
